@@ -8,11 +8,40 @@ namespace Calculator
 {
     class Program
     {
+        
+        static double Multiplication(double leftNumber, double rightNumber)
+        {
+            return leftNumber * rightNumber;
+        }
+        
+        static double Division(double leftNumber, double rightNumber)
+        {
+            return leftNumber / rightNumber;
+        }
+        
+        static double Subtraction(double leftNumber, double rightNumber)
+        {
+            return leftNumber - rightNumber;
+        }
+        
+        static double Addition(double leftNumber, double rightNumber)
+        {
+            return leftNumber + rightNumber;
+        }
+        
+        static void Enter(out double leftNumber, out double rightNumber)
+        {
+            Console.Write("Enter first number: ");
+            leftNumber = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Enter second number: ");
+            rightNumber = Convert.ToDouble(Console.ReadLine());
+        }      
+        
         static void Main(string[] args)
         {
             int user_choice = 0;
-            int numb_first;
-            int numb_second;
+            double numb_first;
+            double numb_second;
             {
                 do
                 {
@@ -21,32 +50,20 @@ namespace Calculator
                     switch (user_choice)
                     {
                         case 1:
-                            Console.Write("Enter first number: ");
-                            numb_first = Convert.ToInt32(Console.ReadLine());
-                            Console.Write("Enter second number: ");
-                            numb_second = Convert.ToInt32(Console.ReadLine());
-                            Console.Write("Result: {0}", numb_first * numb_second);
+                            Enter(out numb_first, out numb_second);
+                            Console.Write("Result: {0}", Multiplication(numb_first, numb_second));
                             break;
                         case 2:
-                            Console.Write("Enter first number: ");
-                            numb_first = Convert.ToInt32(Console.ReadLine());
-                            Console.Write("Enter second number: ");
-                            numb_second = Convert.ToInt32(Console.ReadLine());
-                            Console.Write("Result: {0}", numb_first / numb_second);
+                            Enter(out numb_first, out numb_second);
+                            Console.Write("Result: {0}", Division(numb_first, numb_second));
                             break;
                         case 3:
-                            Console.Write("Enter first number: ");
-                            numb_first = Convert.ToInt32(Console.ReadLine());
-                            Console.Write("Enter second number: ");
-                            numb_second = Convert.ToInt32(Console.ReadLine());
-                            Console.Write("Result: {0}", numb_first - numb_second);
+                            Enter(out numb_first, out numb_second);
+                            Console.Write("Result: {0}", Subtraction(numb_first, numb_second));
                             break;
                         case 4:
-                            Console.Write("Enter first number: ");
-                            numb_first = Convert.ToInt32(Console.ReadLine());
-                            Console.Write("Enter second number: ");
-                            numb_second = Convert.ToInt32(Console.ReadLine());
-                            Console.Write("Result: {0}", numb_first + numb_second);
+                            Enter(out numb_first, out numb_second);
+                            Console.Write("Result: {0}", Addition(numb_first, numb_second));
                             break;
                     }
                 } while (user_choice != 5);
